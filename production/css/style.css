@@ -1,0 +1,300 @@
+body, ul, li, h1, h2, h3, h4, h5, h6, p, textarea {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+input, textarea {
+  border: 0;
+  outline: none; }
+
+textarea {
+  resize: none;
+  overflow: hidden; }
+
+/* for IE */
+a img {
+  border: 0; }
+
+/* 
+Usage
+ 
+.sidebar { 
+	width: 60%; 
+		@include respond-to(mobile) {
+		background: #000;	
+		}
+}
+*/
+/*
+Usage
+
+input { 
+	@include placeholder {
+    	color: #ccc;
+    }
+}
+*/
+/*
+Usage
+
+.item {	
+	@include border-radius;
+}
+*/
+/*
+Usage
+
+.item {	
+	@include box-sizing;
+}
+*/
+/*
+Usage
+
+a {
+	color: gray;
+	@include transition(color .3s ease);
+	&:hover {
+		color: black;
+	}
+}
+*/
+/*
+Usage
+
+.wrapper {
+	width: 100px;
+	@include gradient_2 (bottom,#000,40%,#fff,50%);
+}
+*/
+/* Usage
+.wrapper {
+
+  position: relative;  
+  @include pseudo_abs (after,0,0,auto,auto,50px,50px,"../images/sprites.png",0,0);
+}
+*/
+/* Usage
+.wrapper {
+
+  position: relative;  
+ @include pseudo_absolute(before,$arrow_select,15px,0,auto,auto);
+}
+*/
+/* 
+Usage
+
+.block {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	@include arrow(right,red,5px,auto,auto,0,0,auto,-5px);  
+}
+*/
+/* usage
+.container {
+	@include flex_grid(grid_tile, 4, 22%);
+}
+* column_count could be 3,4 or 5
+*/
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+* {
+  webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.header_wrapper {
+  background: #76c7c0; }
+  .header_wrapper .header {
+    max-width: 1280px;
+    margin: 0 auto; }
+
+.main {
+  padding: 100px 0; }
+
+.pdp_main {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 1220px;
+  font-family: Verdana; }
+
+.product_images_container {
+  width: 810px;
+  float: left; }
+
+.secondary_content {
+  width: 350px;
+  height: 1000px;
+  float: right; }
+
+.product_primary_image_wrap {
+  position: relative;
+  float: left;
+  margin-left: 15px;
+  border: 1px solid #000; }
+  .product_primary_image_wrap .product_primary_image {
+    overflow: hidden;
+    max-height: 640px;
+    width: 640px; }
+  .product_primary_image_wrap img {
+    display: block;
+    width: 100%;
+    position: relative; }
+    .product_primary_image_wrap img.zoomed {
+      width: auto; }
+
+.product_thumbnails {
+  width: 150px;
+  float: left; }
+  .product_thumbnails .thumb {
+    margin-bottom: 13px;
+    cursor: pointer; }
+    .product_thumbnails .thumb img {
+      display: block;
+      width: 100%; }
+    .product_thumbnails .thumb.selected {
+      border: 1px solid #000; }
+
+.product_img_prev, .product_img_next {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  margin-top: -20px;
+  z-index: 10; }
+  .product_img_prev:after, .product_img_prev:before, .product_img_next:after, .product_img_next:before {
+    content: '';
+    position: absolute;
+    background: #000; }
+  .product_img_prev:hover:before, .product_img_prev:hover:after, .product_img_next:hover:before, .product_img_next:hover:after {
+    background: #888; }
+
+.product_img_prev {
+  left: 10px; }
+  .product_img_prev:after {
+    top: 17px;
+    width: 2px;
+    left: 7px;
+    background: #000;
+    height: 20px;
+    transform: rotate(-45deg); }
+  .product_img_prev:before {
+    top: 3px;
+    left: 8px;
+    width: 2px;
+    height: 20px;
+    transform: rotate(45deg); }
+
+.product_img_next {
+  right: 10px; }
+  .product_img_next:after {
+    top: 17px;
+    right: 8px;
+    width: 2px;
+    height: 20px;
+    transform: rotate(45deg); }
+  .product_img_next:before {
+    top: 3px;
+    right: 8px;
+    width: 2px;
+    height: 20px;
+    transform: rotate(-45deg); }
+
+.product-name {
+  margin-bottom: 10px;
+  color: #444; }
+
+.product-short-description {
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: #616365;
+  font-size: 12px; }
+
+.swatch-item {
+  float: left;
+  padding: 0 2px 4px;
+  text-align: center;
+  text-transform: capitalize; }
+  .swatch-item a {
+    border: 1px dashed #d1d1d1;
+    display: block;
+    min-width: 44px;
+    height: 44px;
+    line-height: 44px;
+    color: #616365;
+    padding: 0 1px; }
+    .swatch-item a:hover {
+      background-color: #f3f3f3; }
+
+.product-variations .label {
+  color: #616365; }
+
+.btn-pdp-cta {
+  margin-top: 20px;
+  background: #762322;
+  border: 1px solid #762322;
+  padding: 16px 30px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: #fff;
+  transition: background .2s ease-in; }
+  .btn-pdp-cta:hover {
+    background: #611503; }
+
+/*# sourceMappingURL=style.css.map */
