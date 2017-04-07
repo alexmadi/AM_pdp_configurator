@@ -190,6 +190,10 @@ The `sprites` mixin generates identical output to the CSS template
     position: relative; }
     .product_primary_image_wrap img.zoomed {
       width: auto; }
+      .product_primary_image_wrap img.zoomed:hover {
+        cursor: zoom-out; }
+    .product_primary_image_wrap img:hover {
+      cursor: zoom-in; }
 
 .product_thumbnails {
   width: 150px;
